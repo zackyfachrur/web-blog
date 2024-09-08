@@ -1,0 +1,361 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+:root {
+    --blue: #0845bf;
+    --white: #f2f2f2;
+    --dark: #1f1f1f;
+    --blue-gradient: #6292f3, #0845bf;
+    --white-gradient: #f2f2f2, #d4d2d2;
+}
+
+* {
+    font-family: "Rubik", sans-serif;
+}
+
+/* body {
+    background-color: var(--blue);
+} */
+
+/* Navbar Blade */
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    height: 100px;
+    background-color: white;
+}
+
+.navbar a > img {
+    width: 200px;
+}
+
+.navbar h1 {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.navbar ul {
+    width: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    font-weight: 600;
+}
+
+.navbar ul > li > a {
+    font-size: 1.2rem;
+    color: transparent;
+    background: linear-gradient(to top, var(--blue-gradient));
+    background-clip: text;
+    transition: all ease-in-out 0.3s;
+    -webkit-transition: all ease-in-out 0.3s;
+    -moz-transition: all ease-in-out 0.3s;
+    -ms-transition: all ease-in-out 0.3s;
+    -o-transition: all ease-in-out 0.3s;
+    padding: 5px 10px 5px 10px;
+}
+
+.navbar ul > li > a:hover {
+    background: linear-gradient(to bottom, var(--blue-gradient));
+    transform: translate(42px, 18px);
+    background-clip: text;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.button-item {
+    filter: drop-shadow(3px 3px 0 var(--blue));
+    -webkit-filter: drop-shadow(3px 3px 0 var(--blue));
+    transition: all ease-in-out 0.3s;
+    -webkit-transition: all ease-in-out 0.3s;
+    -moz-transition: all ease-in-out 0.3s;
+    -ms-transition: all ease-in-out 0.3s;
+    -o-transition: all ease-in-out 0.3s;
+}
+
+.button-item:hover {
+    filter: none;
+    -webkit-filter: none;
+    transform: translate(3px, 3px);
+    -webkit-transform: translate(3px, 3px);
+    -moz-transform: translate(3px, 3px);
+    -ms-transform: translate(3px, 3px);
+    -o-transform: translate(3px, 3px);
+}
+
+/* End Navbar Blade */
+
+/* Login Form */
+
+.login-page {
+    display: flex;
+    justify-content: end;
+    margin-right: 20rem;
+    align-items: center;
+    background-color: var(--blue);
+    height: 100vh;
+}
+
+.login-page img {
+    width: 800px;
+}
+
+.login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.23);
+}
+
+.login-form h1 {
+    color: white;
+}
+
+.login-form label {
+    color: white;
+    transition: all ease-in-out 0.3s;
+    -webkit-transition: all ease-in-out 0.3s;
+    -moz-transition: all ease-in-out 0.3s;
+    -ms-transition: all ease-in-out 0.3s;
+    -o-transition: all ease-in-out 0.3s;
+}
+
+.login-form form {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    color: white;
+}
+.login-form form input {
+    color: white;
+    width: 20vw;
+    outline: none;
+    border-bottom: 1px solid var(--blue);
+    padding: 10px 5px 10px 5px;
+    background-color: transparent;
+}
+
+.login-form form input:focus {
+    width: 20vw;
+}
+
+.login-form button {
+    background-color: var(--blue);
+    padding: 10px 40px 10px 40px;
+    font-weight: bold;
+    font-size: 16px;
+    border: 2px solid var(--blue);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    transition: all ease-in-out 0.3s;
+}
+
+.login-form button:hover {
+    translate: 2px 2px;
+    border: 2px solid var(--blue);
+}
+
+/* End Login Form */
+
+/* Register Form */
+
+.register-page {
+    display: flex;
+    justify-content: end;
+    margin-right: 20rem;
+    align-items: center;
+    background-color: var(--blue);
+    height: 100vh;
+}
+
+.register-page img {
+    width: 800px;
+}
+
+.register-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    gap: 70px;
+    height: 700px;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.23);
+}
+
+.register-form h1 {
+    margin-top: -80px;
+    color: white;
+}
+
+.register-form label {
+    color: white;
+    transition: all ease-in-out 0.3s;
+    -webkit-transition: all ease-in-out 0.3s;
+    -moz-transition: all ease-in-out 0.3s;
+    -ms-transition: all ease-in-out 0.3s;
+    -o-transition: all ease-in-out 0.3s;
+}
+
+.register-form form {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    color: white;
+}
+.register-form form input {
+    color: white;
+    width: 20vw;
+    outline: none;
+    border-bottom: 1px solid var(--blue);
+    padding: 10px 5px 10px 5px;
+    background-color: transparent;
+}
+
+.register-form form input:focus {
+    width: 20vw;
+}
+
+.register-form button {
+    background-color: var(--blue);
+    padding: 10px 40px 10px 40px;
+    font-weight: bold;
+    font-size: 16px;
+    border: 2px solid var(--blue);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    transition: all ease-in-out 0.3s;
+}
+
+.register-form button:hover {
+    translate: 2px 2px;
+    border: 2px solid var(--blue);
+}
+
+.register-form .alert-error {
+    position: absolute;
+}
+
+/* End Resgister Form */
+
+/* Home Content */
+.home-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+    gap: 8rem;
+}
+
+.home-content .avatar-intro {
+    border-radius: 50px 300px 800px;
+    margin-right: -200px;
+    width: 600px;
+    background: linear-gradient(to right, var(--blue-gradient));
+    -webkit-border-radius: 50px 300px 800px;
+    -moz-border-radius: 50px 300px 800px;
+    -ms-border-radius: 50px 300px 800px;
+    -o-border-radius: 50px 300px 800px;
+}
+
+.home-content .home-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+
+.home-content .home-intro h1 {
+    font-size: 2.8rem;
+    background-image: linear-gradient(to left, var(--blue-gradient));
+    color: transparent;
+    background-clip: text;
+    font-weight: bold;
+}
+
+.home-content .home-intro p {
+    font-size: 1.2rem;
+}
+
+.home-content .home-intro .button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.home-content .home-intro .button-group .button-primary {
+    background-color: var(--blue);
+    color: white;
+    font-weight: bold;
+    padding: 5px 15px 5px 15px;
+    border-radius: 20px;
+    filter: drop-shadow(3px 3px 0 var(--blue));
+    transition: all ease-in-out 0.2s;
+    -webkit-transition: all ease-in-out 0.2s;
+    -moz-transition: all ease-in-out 0.2s;
+    -ms-transition: all ease-in-out 0.2s;
+    -o-transition: all ease-in-out 0.2s;
+    -webkit-filter: drop-shadow(3px 3px 0 var(--blue));
+}
+
+.home-content .home-intro .button-group .button-primary:hover {
+    transform: translate(4px, 4px);
+    -webkit-transform: translate(4px, 4px);
+    -moz-transform: translate(4px, 4px);
+    -ms-transform: translate(4px, 4px);
+    -o-transform: translate(4px, 4px);
+    filter: none;
+    -webkit-filter: none;
+}
+
+.home-content .home-intro .button-group .button-secondary {
+    border-radius: 20px;
+    border: 2px solid transparent;
+    padding: 5px 15px 5px 15px;
+    font-weight: bold;
+    color: var(--blue);
+    transition: all ease-in-out 0.2s;
+    -webkit-transition: all ease-in-out 0.2s;
+    -moz-transition: all ease-in-out 0.2s;
+    -ms-transition: all ease-in-out 0.2s;
+    -o-transition: all ease-in-out 0.2s;
+}
+
+.home-content .home-intro .button-group .button-secondary:hover {
+    text-decoration: underline;
+}
+
+/* Home Content */

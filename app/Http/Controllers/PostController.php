@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use \App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -14,9 +16,14 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = DB::table('posts')
-            ->select('id', 'title', 'content', 'created_at')
-            ->get();
+
+        if (!Auth::check()) {
+            return redirect('login');
+        }
+
+        // Menampilkan Data Yang Sudah Di Soft DELETE
+        $posts = Post::active()->withTrashed()->get();
+
         $view_data = [
             'posts' => $posts,
         ];
@@ -31,6 +38,9 @@ class PostController extends Controller
      */
     public function create()
     {
+        if (!Auth::check()) {
+            return redirect('login');
+        }
         return view('posts.create');
     }
 
@@ -42,12 +52,16 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        if (!Auth::check()) {
+            return redirect('login');
+        }
         $title = $request->input('title');
         $content = $request->input('content');
 
-        DB::table('posts')->insert([
+        Post::create([
             'title' => $title,
             'content' => $content,
+            'active' => true,
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
@@ -63,12 +77,17 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        $post = DB::table('posts')->select('id', 'title', 'content', 'created_at')
-            ->where('id', $id)
-            ->first();
+        if (!Auth::check()) {
+            return redirect('login');
+        }
+        $post = Post::where('id', $id)->first();
+        $comments = $post->comments()->get();
+        $count_comments = $post->count_comments();
 
         $view_data = [
             'post' => $post,
+            'comments' => $comments,
+            'count_comments' => $count_comments,
         ];
 
         return view('posts.show', $view_data);
@@ -82,8 +101,10 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        $post = DB::table('posts')->select('id', 'title', 'content', 'created_at')
-            ->where('id', $id)->first();
+        if (!Auth::check()) {
+            return redirect('login');
+        }
+        $post = Post::where('id', $id)->first();
 
         $view_data = [
             'post' => $post,
@@ -101,10 +122,13 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
+        if (!Auth::check()) {
+            return redirect('login');
+        }
         $title = $request->input('title');
         $content = $request->input('content');
 
-        DB::table('posts')->where('id', $id)
+        Post::where('id', $id)
             ->update([
                 'title' => $title,
                 'content' => $content,
@@ -122,6 +146,12 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if (!Auth::check()) {
+            return redirect('login');
+        }
+        Post::where('id', $id)
+            ->delete();
+
+        return redirect("posts");
     }
 }
