@@ -21,7 +21,7 @@
     {{-- Footer --}}
     @include('layouts.app.footer')
 
-    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    <script src="{{ url('js/style.js') }}"></script>
 </body>
 
 </html>

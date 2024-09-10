@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <link rel="stylesheet" href="{{ url('style.css') }}">
     <link rel="stylesheet" href="{{ url('fonts/remixicon.css') }}">
     <script src="{{ url('https://cdn.tailwindcss.com') }}"></script>
@@ -17,9 +18,7 @@
 {{-- Content --}}
 @yield('content')
 
-{{-- Footer --}}
-@include('layouts.app.footer')
 
-<script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+<script src="{{ url('js/style.js') }}"></script>
 
 </html>
