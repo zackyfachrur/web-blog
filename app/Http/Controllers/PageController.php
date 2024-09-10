@@ -13,6 +13,44 @@ class PageController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $avatars = [
+            [
+                'avatar_link' => 'img/Avatar/Avatar-Card-1.svg',
+                'avatar_header' => 'Rio Wanderlust',
+                'avatar_desc' => 'Simple and comfortable design, boosts confidence for casual wear.'
+            ],
+            [
+                'avatar_link' => 'img/Avatar/Avatar-Card-2.svg',
+                'avatar_header' => 'Somat Moon',
+                'avatar_desc' => 'Neutral colors that are chic and easy to mix and match.'
+            ],
+            [
+                'avatar_link' => 'img/Avatar/Avatar-Card-3.svg',
+                'avatar_header' => 'Diana Maverick',
+                'avatar_desc' => 'Stylish and comfortable, perfect for daily activities.'
+            ],
+            [
+                'avatar_link' => 'img/Avatar/Avatar-Card-4.svg',
+                'avatar_header' => 'Rendi Nomad',
+                'avatar_desc' => 'Simple, affordable, but high quality.'
+            ],
+            [
+                'avatar_link' => 'img/Avatar/Avatar-Card-5.svg',
+                'avatar_header' => 'Sarah Heights',
+                'avatar_desc' => 'Timeless design and eco-friendly, no need to buy new clothes often.'
+            ],
+            [
+                'avatar_link' => 'img/Avatar/Avatar-Card-6.svg',
+                'avatar_header' => 'Robert Skylar',
+                'avatar_desc' => 'Minimalist yet fashionable, suitable for various occasions.'
+            ],
+        ];
+
+        return view('pages.home', compact('avatars'));
+    }
+
+    public function about()
+    {
+        return view('pages.about');
     }
 }

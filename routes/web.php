@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 // Front End
 Route::get('/', [PageController::class, 'index']);
+Route::get('/about', [PageController::class, 'about']);
 
 // Authentication
 Route::get('login', [AuthController::class, 'login']);

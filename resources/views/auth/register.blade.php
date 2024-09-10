@@ -5,7 +5,7 @@
 @section('content')
 
     <body class="register-page">
-        <img src="{{ url('img/Login-avatar.png') }}" alt="Login Images">
+        <img src="{{ url('img/Register-Avatar.png') }}" alt="Login Images">
         <div class="register-form">
             <h1 class="text-2xl font-semibold">Create your Account</h1>
             <form class="max-w-sm mx-auto h-96" method="POST" action="{{ url('register') }}">
