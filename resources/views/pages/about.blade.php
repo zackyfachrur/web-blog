@@ -9,12 +9,17 @@
             <img class="building" src="{{ url('img/Building-About.svg') }}" alt="">
             <div class="about-header">
                 <h1>Throw Clothes</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos expedita cumque quisquam architecto a
-                    aperiam reiciendis dignissimos. Atque commodi voluptates maiores sed, voluptatum non voluptate similique
-                    pariatur! Voluptates dolorum tempora quisquam debitis exercitationem, unde quidem totam modi sunt
-                    aliquid necessitatibus?</p>
+                <p>Throw Clothes is a fashion brand that offers casual and semi-formal clothing with modern designs and
+                    high-quality materials. We prioritize comfort and durability, using the best fabrics to create stylish
+                    products that fit your lifestyle.</p>
+                <div class="button-group">
+                    <button class="button-primary">See Product</button>
+                    <button class="button-secondary">Learn More</button>
+                </div>
             </div>
 
         </section>
+
+        <section></section>
     </body>
 @endsection
