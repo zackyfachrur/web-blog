@@ -17,6 +17,11 @@ body {
     place-items: center;
     box-sizing: border-box;
     overflow-x: hidden;
+    font-smooth: always;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Disable Draggable Images */
@@ -656,6 +661,7 @@ img {
     align-items: center;
     width: 100vw;
     height: 90vh;
+    margin-bottom: -500px;
 }
 
 .about-intro .building {
@@ -683,6 +689,101 @@ img {
 .about-intro p {
     color: var(--dark);
     font-weight: 600;
+}
+
+.about-vision {
+    display: flex;
+    padding: 5rem;
+    gap: 5rem;
+    justify-content: space-evenly;
+    background: var(--blue);
+    color: white;
+}
+
+.about-story-content {
+    width: 40%;
+}
+
+.about-story-content h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.about-mission-content {
+    width: 40%;
+}
+
+.about-mission-content h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.about-value {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60vh;
+    width: 100vw;
+}
+
+.about-value .about-avatar {
+    width: 600px;
+}
+.about-value-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 800px;
+}
+
+.about-value-content h2 {
+    font-size: 4rem;
+    color: var(--blue);
+    font-weight: bold;
+}
+
+.about-value-content ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.about-value-content ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 2rem;
+    color: var(--white);
+    font-weight: bold;
+    filter: drop-shadow(3px 3px 0 var(--dark));
+    border: 1px solid var(--dark);
+    background-color: var(--blue);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    -webkit-filter: drop-shadow(3px 3px 0 var(--dark));
+    transition: all ease-in-out 0.3s;
+    -webkit-transition: all ease-in-out 0.3s;
+    -moz-transition: all ease-in-out 0.3s;
+    -ms-transition: all ease-in-out 0.3s;
+    -o-transition: all ease-in-out 0.3s;
+}
+
+.about-value-content ul li:hover {
+    cursor: default;
+    transform: translate(4px, 4px);
+    filter: none;
+    -webkit-filter: none;
+    -webkit-transform: translate(4px, 4px);
+    -moz-transform: translate(4px, 4px);
+    -ms-transform: translate(4px, 4px);
+    -o-transform: translate(4px, 4px);
 }
 
 /* End About Content */
