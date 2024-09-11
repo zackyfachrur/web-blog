@@ -19,6 +19,7 @@
 @yield('content')
 
 
+
 <script src="{{ url('js/style.js') }}"></script>
 
 </html>

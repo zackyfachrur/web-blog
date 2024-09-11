@@ -4,8 +4,8 @@
         <input type="text" class="border-2 rounded-lg outline-none px-3">
     </form> --}}
     <ul class="navbar-list">
-        <li><a href="{{ url('/') }}">Home</a></li>
-        <li><a href="{{ url('/about') }}">About</a></li>
+        <li><a href="{{ url('/') }}" class="{{ Request::is('/') ? 'active' : '' }}">Home</a></li>
+        <li><a href="{{ url('/about') }}" class="{{ Request::is('about') ? 'active' : '' }}">About</a></li>
         <li><a href="#">Products</a></li>
         <li><a href="#">Contact</a></li>
         <li><a href="#">Blog</a></li>
