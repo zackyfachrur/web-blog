@@ -17,7 +17,7 @@ class PageController extends Controller
             [
                 'avatar_link' => 'img/Avatar/Avatar-Card-1.svg',
                 'avatar_header' => 'Rio Wanderlust',
-                'avatar_desc' => 'Simple and comfortable design, boosts confidence for casual wear.'
+                'avatar_desc' => 'Simple and comfortable design, boosts confidence for casual.'
             ],
             [
                 'avatar_link' => 'img/Avatar/Avatar-Card-2.svg',
@@ -52,5 +52,20 @@ class PageController extends Controller
     public function about()
     {
         return view('pages.about');
+    }
+
+    public function product()
+    {
+        return view('pages.product');
+    }
+
+    public function contact()
+    {
+        return view('pages.contact');
+    }
+
+    public function blog()
+    {
+        return view('pages.blog');
     }
 }

@@ -22,13 +22,14 @@ class PostController extends Controller
         }
 
         // Menampilkan Data Yang Sudah Di Soft DELETE
-        $posts = Post::active()->withTrashed()->get();
+        // $posts = Post::active()->withTrashed()->get();
+        $posts = Post::active()->get();
 
         $view_data = [
             'posts' => $posts,
         ];
 
-        return view('posts.index', $view_data);
+        return view('blogs.index', $view_data);
     }
 
     /**
@@ -41,7 +42,7 @@ class PostController extends Controller
         if (!Auth::check()) {
             return redirect('login');
         }
-        return view('posts.create');
+        return view('blogs.create');
     }
 
     /**
@@ -52,11 +53,11 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        $title = $request->input('title');
+        $content = $request->input('content');
         if (!Auth::check()) {
             return redirect('login');
         }
-        $title = $request->input('title');
-        $content = $request->input('content');
 
         Post::create([
             'title' => $title,
@@ -66,7 +67,7 @@ class PostController extends Controller
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
 
-        return redirect('posts');
+        return redirect('blog');
     }
 
     /**
@@ -81,16 +82,16 @@ class PostController extends Controller
             return redirect('login');
         }
         $post = Post::where('id', $id)->first();
-        $comments = $post->comments()->get();
-        $count_comments = $post->count_comments();
+        // $comments = $post->comments()->get();
+        // $count_comments = $post->count_comments();
 
         $view_data = [
             'post' => $post,
-            'comments' => $comments,
-            'count_comments' => $count_comments,
+            // 'comments' => $comments,
+            // 'count_comments' => $count_comments,
         ];
 
-        return view('posts.show', $view_data);
+        return view('blogs.show', $view_data);
     }
 
     /**
@@ -110,7 +111,7 @@ class PostController extends Controller
             'post' => $post,
         ];
 
-        return view('posts.edit', $view_data);
+        return view('blogs.edit', $view_data);
     }
 
     /**
@@ -125,6 +126,7 @@ class PostController extends Controller
         if (!Auth::check()) {
             return redirect('login');
         }
+
         $title = $request->input('title');
         $content = $request->input('content');
 
@@ -132,10 +134,11 @@ class PostController extends Controller
             ->update([
                 'title' => $title,
                 'content' => $content,
+                'active' => true,
                 'updated_at' => date('Y-m-d H:i:s'),
             ]);
 
-        return redirect("posts/{$id}");
+        return redirect("blog/{$id}");
     }
 
     /**
@@ -152,6 +155,6 @@ class PostController extends Controller
         Post::where('id', $id)
             ->delete();
 
-        return redirect("posts");
+        return redirect("blog");
     }
 }
