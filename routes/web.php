@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 // Front End
 Route::get('/', [PageController::class, 'index']);
 Route::get('/about', [PageController::class, 'about']);
+Route::get('/product', [PageController::class, 'product']);
+Route::get('/contact', [PageController::class, 'contact']);
 
 // Authentication
 Route::get('login', [AuthController::class, 'login']);
@@ -27,10 +29,10 @@ Route::get('register', [AuthController::class, 'register_form']);
 Route::post('register', [AuthController::class, 'register']);
 
 // Blog
-Route::get('posts', [PostController::class, 'index']);
-Route::get('posts/create', [PostController::class, 'create']);
-Route::get('posts/{id}', [PostController::class, 'show']);
-Route::post('posts', [PostController::class, 'store']);
-Route::get('/posts/{id}/edit', [PostController::class, 'edit']);
-Route::patch('/posts/{id}', [PostController::class, 'update']);
-Route::delete('/posts/{id}', [PostController::class, 'destroy']);
+Route::get('blog', [PostController::class, 'index']);
+Route::get('blog/create', [PostController::class, 'create']);
+Route::get('blog/{id}', [PostController::class, 'show']);
+Route::post('blog', [PostController::class, 'store']);
+Route::get('blog/{id}/edit', [PostController::class, 'edit']);
+Route::patch('blog/{id}', [PostController::class, 'update']);
+Route::delete('blog/{id}', [PostController::class, 'destroy']);

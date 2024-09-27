@@ -1,6 +1,5 @@
 @include('layouts.components.wavetop')
 <footer>
-
     <div class="footer-content">
         <img class="footer-logo" src="{{ url('img/Web-Logo-White.png') }}" alt="Footer Logo">
         <div class="footer-about">

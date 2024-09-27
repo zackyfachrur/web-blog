@@ -5,7 +5,7 @@
 @section('content')
 
     <body class="about-page">
-        <section class="about-intro">
+        <section class="about-intro container">
             <img class="building" src="{{ url('img/Building-About.svg') }}" alt="">
             <div class="about-header">
                 <h1>Throw Clothes</h1>
@@ -38,21 +38,48 @@
                 </p>
             </div>
         </section>
-        {{-- @include('layouts.components.waveleft') --}}
-
-        <section class="about-value">
+        {{-- End Story Content --}}
+        @include('layouts.components.waveleft')
+        {{-- Value Content --}}
+        <section class="about-value container"> <img class="about-avatar" src="{{ url('img/Avatar/Avatar-About.svg') }}"
+                alt="About Avatar">
             <div class="about-value-content">
+
                 <h2>Our Values</h2>
                 <ul>
-                    <li>We prioritize eco-friendly materials and processes in all our collections.</li>
-                    <li>Our clothing is designed for everyone, regardless of size, style, or background.</li>
-                    <li>We are committed to offering high-quality, durable clothing that lasts.</li>
+                    <li>
+                        <h3 class="title-value" id="title-value-first" onclick="descValueShow(descValueFirst)">
+                            Sustainability <i class="ri-arrow-down-s-line" id="arrow-first"></i>
+                        </h3>
+                        <p class="hidden desc-value" id="desc-value-first">We prioritize eco-friendly materials and
+                            processes in
+                            all
+                            our
+                            collections.</p>
+                    </li>
+                    <li>
+                        <h3 class="title-value" id="title-value-second" onclick="descValueShow(descValueSecond)">Inclusivity
+                            <i class="ri-arrow-down-s-line" id="arrow-second"></i>
+                        </h3>
+                        <p class="hidden desc-value" id="desc-value-second">Our clothing is designed for everyone,
+                            regardless of
+                            size,
+                            style, or background.</p>
+                    </li>
+                    <li>
+                        <h3 class="title-value" id="title-value-third" onclick="descValueShow(descValueThird)">Quality <i
+                                class="ri-arrow-down-s-line" id="arrow-third"></i></h3>
+                        <p class="hidden desc-value" id="desc-value-third">We are committed to offering high-quality,
+                            durable
+                            clothing
+                            that
+                            lasts.</p>
+                    </li>
                 </ul>
             </div>
-            <img class="about-avatar" src="{{ url('img/Avatar/Avatar-About.svg') }}" alt="About Avatar">
-        </section>
 
-        {{-- End Story Content --}}
+        </section>
+        {{-- End Value Content --}}
 
     </body>
 @endsection
